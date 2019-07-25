@@ -3,6 +3,9 @@ import time
 import os
 import random
 
+import distrub
+from common import screenshot, debug
+
 
 class ARShuaBao(object):
     def __init__(self, apptime):
@@ -34,6 +37,9 @@ class ARShuaBao(object):
             y2 = y1 - random.randint(600, 610)
             # 设备循环执行
             for dName in devices:
+                debug.dump_device_info()
+                screenshot.check_screenshot()
+                distrub.init(dName)
                 os.system("adb -s " + dName + " shell input swipe %d %d %d %d 1500 &" % (x, y1, x, y2))  # 后台执行 小米800-200
         print("阅读完成：刷宝")
 

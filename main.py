@@ -1,16 +1,16 @@
-from QuTouTiao import ARQuTouTiao
-from JuKanDian import ARJuKanDian
-from HongBaoTouTiao import ARHongBaoTouTiao
+# from QuTouTiao import ARQuTouTiao
+# from JuKanDian import ARJuKanDian
+# from HongBaoTouTiao import ARHongBaoTouTiao
 from ShuaBao import ARShuaBao
-from BoBo import ARBoBo
-from ShaFa import ARShaFa
-from ZhongZi import ARZhongZi
-from ZhongZi import ARZhongZiThread
-from HaoKan import ARHaoKan
-from HuiShiPin import ARHuiShiPin
+# from BoBo import ARBoBo
+# from ShaFa import ARShaFa
+# from ZhongZi import ARZhongZi
+# from ZhongZi import ARZhongZiThread
+# from HaoKan import ARHaoKan
+# from HuiShiPin import ARHuiShiPin
 import os
 import re
-import time
+# import time
 
 
 # 获取模拟器总数
@@ -56,7 +56,7 @@ for dName in devices:
     # 开机
     os.system("adb -s %s shell input swipe 500 1200 500 200 500" % dName)
     # # 改亮度值（亮度值在0—255之间）
-    os.system("adb -s %s shell settings put system screen_brightness 50" % dName)
+    # os.system("adb -s %s shell settings put system screen_brightness 50" % dName)
 
 
 # time.sleep(5)
@@ -109,9 +109,9 @@ App阅读时长
 
 # 刷宝 com.jm.video/.ui.main.SplashActivity
 # 打开刷宝
-# appTime_qtt = appTimeBase * 2
-# autoShuaBao = ARShuaBao(appTime_qtt)
-# autoShuaBao.read(devices)
+appTime_qtt = appTimeBase * 2
+autoShuaBao = ARShuaBao(appTime_qtt)
+autoShuaBao.read(devices)
 #
 # # 波波 550706账号2分钟下发100
 # # tv.yixia.bobo/com.kg.v1.welcome.WelcomeActivity
@@ -130,8 +130,8 @@ App阅读时长
 
 # 沙发视频 60s 10金币 6000 = 1元 全看完要10个小时 逗我呢？
 # com.sohu.youju/.app.ui.activity.HelloActivity
-aRShaFa = ARShaFa(execount=100, readtime=60)
-aRShaFa.read(devices, screenWH)
+# aRShaFa = ARShaFa(execount=100, readtime=60)
+# aRShaFa.read(devices, screenWH)
 
 # aRZhongZiThread = ARZhongZiThread(100, 50)
 # ARZhongZiThread.read(aRZhongZiThread, devices)
