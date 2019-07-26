@@ -17,7 +17,7 @@ except Exception as ex:
     exit(1)
 adb = auto_adb()
 # SCREENSHOT_WAY 是截图方法，经过 check_screenshot 后，会自动递减，不需手动修改
-SCREENSHOT_WAY = 3
+SCREENSHOT_WAY = 0
 
 
 def pull_screenshot(device_name):
@@ -37,12 +37,12 @@ def pull_screenshot(device_name):
             binary_screenshot = binary_screenshot.replace(b'\r\r\n', b'\n')
         return Image.open(StringIO(binary_screenshot))
     elif SCREENSHOT_WAY == 0:
-        adb.run(' -s '+device_name + 'shell screencap -p /sdcard/autojump.png')
-        adb.run(' -s '+device_name + 'pull /sdcard/autojump.png .')
+        adb.run(' -s '+device_name + ' shell screencap -p /sdcard/autojump.png')
+        adb.run(' -s '+device_name + ' pull /sdcard/autojump.png .')
         return Image.open('./autojump.png')
 
 
-def check_screenshot():
+def check_screenshot(device_name):
     """
     检查获取截图的方式
     """
@@ -56,10 +56,10 @@ def check_screenshot():
         print('暂不支持当前设备')
         sys.exit()
     try:
-        im = pull_screenshot()
+        im = pull_screenshot(device_name)
         im.load()
         im.close()
         print('采用方式 {} 获取截图'.format(SCREENSHOT_WAY))
     except Exception:
         SCREENSHOT_WAY -= 1
-        check_screenshot()
+        check_screenshot(device_name)

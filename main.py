@@ -51,12 +51,12 @@ screenWH = getDevicesScreenWH(devices)
 
 
 for dName in devices:
-    # 亮屏
-    os.system("adb -s %s shell input keyevent 26" % dName)
-    # 开机
+    #亮屏
+    # os.system("adb -s %s shell input keyevent 26" % dName)
+    #开机
     os.system("adb -s %s shell input swipe 500 1200 500 200 500" % dName)
-    # # 改亮度值（亮度值在0—255之间）
-    # os.system("adb -s %s shell settings put system screen_brightness 50" % dName)
+    # 改亮度值（亮度值在0—255之间）
+    os.system("adb -s %s shell settings put system screen_brightness 50" % dName)
 
 
 # time.sleep(5)

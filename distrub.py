@@ -44,7 +44,7 @@ def follow_user(device_name):
     关注用户
     :return:
     """
-    cmd = 'shell -s '+device_name+' input tap {x} {y}'.format(
+    cmd = ' -s '+device_name + ' shell '+' input tap {x} {y}'.format(
         x=config['follow_bottom']['x'] + _random_bias(10),
         y=config['follow_bottom']['y'] + _random_bias(10)
     )
@@ -57,7 +57,7 @@ def thumbs_up(device_name):
     点赞
     :return:
     """
-    cmd = 'shell -s '+device_name+' input tap {x} {y}'.format(
+    cmd = ' -s '+ device_name + ' shell '+' input tap {x} {y}'.format(
         x=config['star_bottom']['x'] + _random_bias(10),
         y=config['star_bottom']['y'] + _random_bias(10)
     )

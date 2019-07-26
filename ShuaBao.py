@@ -38,7 +38,7 @@ class ARShuaBao(object):
             # 设备循环执行
             for dName in devices:
                 debug.dump_device_info()
-                screenshot.check_screenshot()
+                screenshot.check_screenshot(dName)
                 distrub.init(dName)
                 os.system("adb -s " + dName + " shell input swipe %d %d %d %d 1500 &" % (x, y1, x, y2))  # 后台执行 小米800-200
         print("阅读完成：刷宝")
