@@ -1,4 +1,4 @@
-# 刷宝
+# 惠视频
 import time
 import os
 import random

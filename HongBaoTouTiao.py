@@ -1,4 +1,4 @@
-# 趣头条刷阅读
+# 红包头条
 import cv2
 import time
 import os

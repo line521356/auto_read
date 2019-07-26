@@ -1,6 +1,9 @@
 # from QuTouTiao import ARQuTouTiao
 # from JuKanDian import ARJuKanDian
 # from HongBaoTouTiao import ARHongBaoTouTiao
+from BoBo import ARBoBo
+from HuiShiPin import ARHuiShiPin
+from QuTouTiao import ARQuTouTiao
 from ShuaBao import ARShuaBao
 # from BoBo import ARBoBo
 # from ShaFa import ARShaFa
@@ -109,12 +112,12 @@ App阅读时长
 
 # 刷宝 com.jm.video/.ui.main.SplashActivity
 # 打开刷宝
-appTime_qtt = appTimeBase * 2
-autoShuaBao = ARShuaBao(appTime_qtt)
-autoShuaBao.read(devices)
+# appTime_qtt = appTimeBase * 2
+# autoShuaBao = ARShuaBao(appTime_qtt)
+# autoShuaBao.read(devices)
 #
 # # 波波 550706账号2分钟下发100
-# # tv.yixia.bobo/com.kg.v1.welcome.WelcomeActivity
+# tv.yixia.bobo/com.kg.v1.welcome.WelcomeActivity
 # aRBoBo = ARBoBo(execount=50, readtime=120)
 # aRBoBo.read(devices)
 
@@ -125,8 +128,8 @@ autoShuaBao.read(devices)
 
 # 惠视频
 # com.cashvideo/.LaunchPageActivity
-# aRHui = ARHuiShiPin(execount=100, readtime=30)
-# aRHui.read(devices, screenWH)
+aRHui = ARHuiShiPin(execount=100, readtime=30)
+aRHui.read(devices, screenWH)
 
 # 沙发视频 60s 10金币 6000 = 1元 全看完要10个小时 逗我呢？
 # com.sohu.youju/.app.ui.activity.HelloActivity
